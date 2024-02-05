@@ -35,7 +35,7 @@ Le schéma de génération est disponible sur
 ![img_1.png](img_1.png)
 
 ### POST création d'un nouveau étudiant
-    POST http:localhost:8080/etudiant
+     http:localhost:8080/etudiants
 #### Contrainte de validation depuis le DTO pour email unique
 Le serveur retourne un code status 409 CONFLICT
 ![img_6.png](img_6.png)
@@ -45,7 +45,7 @@ Le serveur retourne un code status 409 CONFLICT
 
 ### Delete étudiant
   
-     DELETE http:localhost:8080/etudiant
+      http:localhost:8080/etudiants/{id}
 
 #### Via Postman
 
@@ -53,11 +53,12 @@ Le serveur retourne un code status 409 CONFLICT
 
 ### GET liste etudiant paginated
 
-Par défaut la pageSize est à 5 l'index est de 0
+Par défaut la pageSize est à `5` et  l'index est de `0`
+
 Les paramètres `size` et `page` sont des query params modifiables
 
 
-`http://localhost:8080/etudiants?size=3&page=1`
+`http://localhost:8080/etudiants?size={size}&page={page}`
 
 ![img_2.png](img_2.png)
 
