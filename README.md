@@ -43,8 +43,13 @@ Le serveur retourne un code status 409 CONFLICT
 
 ![img_7.png](img_7.png)
 
+### PUT  modifier un étudiant
+    http://localhost:8080/etudiants/{id}
+
+![img_8.png](img_8.png)
+
 ### Delete étudiant
-  
+
       http:localhost:8080/etudiants/{id}
 
 #### Via Postman
