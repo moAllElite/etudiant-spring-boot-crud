@@ -98,20 +98,20 @@ public class EtudiantController {
         etudiantService.delete(id);
         return ResponseEntity.noContent().build();
     }
-    @Operation(
-            summary = "Modifier un etudiant",
-            description = "Modifier un etudiant",
-            responses= {@ApiResponse(
-                responseCode = "204",
-                description = "Success"
-                    ),@ApiResponse(
-                            responseCode = "400",
-                    description = "Bad request"
-            )}
-    )
-    @Transactional()
-    @PutMapping("/{id}")
-    public ResponseEntity<EtudiantDTO> update(@PathVariable Long id, @Valid @RequestBody EtudiantDTO etudiantDTO) {
-        return ResponseEntity.ok(etudiantService.update(id, etudiantDTO));
-    }
+//    @Operation(
+//            summary = "Modifier un etudiant",
+//            description = "Modifier un etudiant",
+//            responses= {@ApiResponse(
+//                responseCode = "204",
+//                description = "Success"
+//                    ),@ApiResponse(
+//                            responseCode = "400",
+//                    description = "Bad request"
+//            )}
+//    )
+//    @Transactional()
+//    @PutMapping("/")
+//    public ResponseEntity<EtudiantDTO> update(@RequestParam("id") Long id, @Valid @RequestBody EtudiantDTO etudiantDTO) {
+//        return ResponseEntity.ok(etudiantService.update(id, etudiantDTO));
+//    }
 }

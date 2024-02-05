@@ -55,12 +55,12 @@ public class EtudiantService implements IEtudiantService {
     @Override
     public EtudiantDTO update(Long id, EtudiantDTO etudiantDTO) {
 
-        if (etudiantRepository.findById(id).isEmpty()) {
-           throw new EntityNotFoundException("Etudiant  fourni n'existe pas  l'ID fourni"+id);
+        if (etudiantRepository.findById(id).isPresent()) {
+            Etudiant etudiant = etudiantRepository.save(etudiantMapper.toEtudiantEntity(etudiantDTO));
+            return etudiantMapper.toEtudiantDTO(etudiant);
         }
-        Etudiant etudiant = etudiantRepository.save(etudiantMapper.toEtudiantEntity(etudiantDTO));
+        throw new EntityNotFoundException("Etudiant  fourni n'existe pas  l'ID fourni"+id);
 
-        return etudiantMapper.toEtudiantDTO(etudiant);
     }
 
 
