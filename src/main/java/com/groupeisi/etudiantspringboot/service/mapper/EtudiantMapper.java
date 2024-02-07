@@ -25,14 +25,14 @@ public class EtudiantMapper implements IEtudiantMapper{
     }
 
     public  EtudiantDTO toEtudiantDTO (Etudiant etudiant){
-        return new EtudiantDTO(
-                etudiant.getId(),
-                etudiant.getNomComplet(),
-                etudiant.getEmail(),
-                etudiant.getTelephone(),
-                etudiant.getClasse(),
-                etudiant.getFiliere(),
-                etudiant.getDateNaissance()
-        );
+        return  EtudiantDTO.builder()
+                .id(etudiant.getId())
+                .nomComplet(etudiant.getNomComplet())
+                .email(etudiant.getEmail())
+                .telephone(etudiant.getTelephone())
+                .filiere(etudiant.getFiliere())
+                .dateNaissance(etudiant.getDateNaissance())
+                .classe(etudiant.getClasse())
+                .build();
     }
 }

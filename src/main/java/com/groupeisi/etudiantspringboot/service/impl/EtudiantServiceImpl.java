@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class EtudiantService implements IEtudiantService {
+public class EtudiantServiceImpl implements IEtudiantService {
     private final EtudiantRepository etudiantRepository;
     private final IEtudiantMapper etudiantMapper;
 
